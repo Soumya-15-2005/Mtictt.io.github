@@ -28,16 +28,18 @@ const checkwin=()=>{
          if ((boxset[e[0]].innerText === boxset[e[1]].innerText) &&
              (boxset[e[1]].innerText === boxset[e[2]].innerText) &&
                (boxset[e[0]].innerText !== "")) {
-                let msg=document.getElementById("msg");
-                console.log("winner");
-               msg.innerText= "Congratulations!"+ boxset[e[0]].innerText+"is"+"winner";              
-              console.log( msg.innerText= boxset[e[0]].innerText+"is"+"winner");
+                let msg=document.querySelector("#msg");
+                boxset[e[0]].style.backgroundColor="brown";
+                boxset[e[1]].style.backgroundColor="brown";
+                boxset[e[2]].style.backgroundColor="brown";
+               msg.innerText= "Congratulations!"+ " "+boxset[e[0]].innerText+" "+"is"+" "+"winner";              
+             
         }
     })
 
 }
 //logic
-song.play();
+// song.play();
 Array.from(buttons).forEach((element) => {
          element.addEventListener("click", () => {
         if(element.innerText===''){
@@ -54,11 +56,21 @@ Array.from(buttons).forEach((element) => {
 reset.addEventListener("click",()=>{
      Array.from(buttons).forEach((element)=>{
         element.innerText=" ";
+        element.style.backgroundColor="";
+        let msg=document.getElementById("msg");
+        msg.innerText= "The Game Is Reset Now";  
+    
+        
      })
 })
 //addonclick listener
 newbtn.addEventListener("click",()=>{
     Array.from(buttons).forEach((element)=>{
        element.innerText=" ";
+       element.style.backgroundColor="";
+       msg.innerText= "WELCOME TO TIC TAC TOE";     
+      
+
+       
     })
 })
