@@ -39,7 +39,7 @@ const checkwin=()=>{
 
 }
 //logic
-// song.play();
+
 Array.from(buttons).forEach((element) => {
          element.addEventListener("click", () => {
         if(element.innerText===''){
