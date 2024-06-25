@@ -32,7 +32,8 @@ const checkwin=()=>{
                 boxset[e[0]].style.backgroundColor="#afeeee";
                 boxset[e[1]].style.backgroundColor="#afeeee";
                 boxset[e[2]].style.backgroundColor="#afeeee";
-               msg.innerText= "Congratulations!"+ " "+boxset[e[0]].innerText+" "+"is"+" "+"winner";              
+               msg.innerText= "Congratulations!"+ " "+boxset[e[0]].innerText+" "+"is"+" "+"winner";     
+                     
              
         }
     })
