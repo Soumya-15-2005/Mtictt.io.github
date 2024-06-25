@@ -29,9 +29,9 @@ const checkwin=()=>{
              (boxset[e[1]].innerText === boxset[e[2]].innerText) &&
                (boxset[e[0]].innerText !== "")) {
                 let msg=document.querySelector("#msg");
-                boxset[e[0]].style.backgroundColor="brown";
-                boxset[e[1]].style.backgroundColor="brown";
-                boxset[e[2]].style.backgroundColor="brown";
+                boxset[e[0]].style.backgroundColor="#afeeee";
+                boxset[e[1]].style.backgroundColor="#afeeee";
+                boxset[e[2]].style.backgroundColor="#afeeee";
                msg.innerText= "Congratulations!"+ " "+boxset[e[0]].innerText+" "+"is"+" "+"winner";              
              
         }
