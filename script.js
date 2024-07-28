@@ -1,8 +1,11 @@
 let buttons=document.getElementsByClassName("box");
 let msg=document.getElementById("msg");
+let img=document.getElementById("imgbox");
 let audioTurn = new Audio("ting.mp3");
 let song= new Audio("Gmusic.mp3");
-
+function showimg(){
+    img.style.display= 'block';
+}
 let turn="X";
 const changeturn=()=>{
     if(turn==="X"){
@@ -32,7 +35,13 @@ const checkwin=()=>{
                 boxset[e[0]].style.backgroundColor="#afeeee";
                 boxset[e[1]].style.backgroundColor="#afeeee";
                 boxset[e[2]].style.backgroundColor="#afeeee";
-               msg.innerText= "Congratulations!"+ " "+boxset[e[0]].innerText+" "+"is"+" "+"winner";     
+                showimg(); 
+               msg.innerText= "Congratulations!"+ " "+boxset[e[0]].innerText+" "+"is"+" "+"winner"; 
+               document.msg.style.color="red";
+               Array.from(boxset).forEach((buttons)=>{
+                buttons.disabled=true;
+            });
+                  
                      
              
         }
@@ -60,7 +69,7 @@ reset.addEventListener("click",()=>{
         element.style.backgroundColor="";
         let msg=document.getElementById("msg");
         msg.innerText= "The Game Is Reset Now";  
-    
+        song.pause(); 
         
      })
 })
@@ -69,7 +78,8 @@ newbtn.addEventListener("click",()=>{
     Array.from(buttons).forEach((element)=>{
        element.innerText=" ";
        element.style.backgroundColor="";
-       msg.innerText= "WELCOME TO TIC TAC TOE";     
+       msg.innerText= "Game Start Now";    
+       song.pause(); 
       
 
        
